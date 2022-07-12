@@ -16,9 +16,7 @@ public class GeneroEntity {
     @Column
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
     private String nombre;
-
     private String imagen;
 
     // peliculas o series asociadas
