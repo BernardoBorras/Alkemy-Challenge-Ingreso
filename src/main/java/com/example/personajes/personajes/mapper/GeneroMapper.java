@@ -3,6 +3,9 @@ import com.example.personajes.personajes.dto.GeneroDTO;
 import com.example.personajes.personajes.entity.GeneroEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class GeneroMapper {
 
@@ -23,6 +26,14 @@ public class GeneroMapper {
         return dto;
     }
 
+    // Conversion de Lista de Entidades a Lista de DTOs
+    public List<GeneroDTO> generoEntityList2DTOList(List<GeneroEntity> entities){
+        List<GeneroDTO> dtos = new ArrayList<>();
+        for (GeneroEntity entity : entities){
+            dtos.add(this.generoEntity2DTO(entity));
+        }
+        return dtos;
+    }
 
 
 
